@@ -1,0 +1,35 @@
+header{
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+#generate{
+    margin: 20px 0;
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border: 1px solid #fff;
+}
+
+#generate:hover{
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #333;
+}
+
+.mainArea{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.CodeMirror {
+    padding: 20px 10px;
+    border-top: 1px solid #ccc;
+  }
