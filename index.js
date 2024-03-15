@@ -1,16 +1,30 @@
-import data from './codeDrills.js';
-
-var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
-    lineNumbers: true,
-    mode: "javascript",
-    theme: "dracula", // Use the Monokai theme
-    lineWrapping: true,
-  });
+import data from "./codeDrills.js";
+import editor from "./cmStyle.js";
 
 var generate = document.getElementById("generate");
-var code = document.getElementById("code");
 
-generate.addEventListener("click", function() {
-    let randomNum = Math.floor(Math.random() * data.length);
-    editor.setValue(data[randomNum].code);
+generate.addEventListener("click", function () {
+  var random = Math.floor(Math.random() * data.length);
+  editor.setValue(data[random].code); // Use setValue instead of textContent
+  
+  if (document.getElementById("testBtn")){
+    document.getElementById("testBtn").remove();
+  }
+
+  var runBtn = document.createElement("button");
+  runBtn.textContent = "Run";
+  runBtn.id = "testBtn";
+
+  var btnDiv = document.getElementById("btnDiv");
+  btnDiv.appendChild(runBtn);
+
+  runBtn.addEventListener("click", function () {
+    var test = data[random].test;
+    eval(editor.getValue() + test);
+  }
+  );
+
 });
+
+
+
