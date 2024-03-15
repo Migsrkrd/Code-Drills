@@ -1,19 +1,20 @@
-import oddOrEven from "./codeDrills/oddOrEven.js";
-import arithmetic from "./codeDrills/arithmetic.js";
+import oddOrEven from "./codeDrills/01/oddOrEven.js";
+import arithmetic from "./codeDrills/01/arithmetic.js";
 import sumArray from "./codeDrills/sumArray.js";
+import logNums from "./codeDrills/01/logNums.js";
 
 const data = [
   {
-    code: arithmetic.code,
-    test: arithmetic.test,
+    code: logNums.code,
+    test: logNums.test
   },
   {
     code: oddOrEven.code,
-    test: oddOrEven.test,
+    test: oddOrEven.test
   },
   {
-    code: sumArray.code,
-    test: sumArray.test,
+    code: arithmetic.code,
+    test: arithmetic.test
   }
 ];
 
