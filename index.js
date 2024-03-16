@@ -1,24 +1,22 @@
 import data from "./codeDrills.js";
 import editor from "./cmStyle.js";
 
-var generate = document.getElementById("generate");
-
-generate.addEventListener("click", function () {
-  document.getElementById("mocha").innerHTML = "";
-  var random = Math.floor(Math.random() * data.length);
-  editor.setValue(data[random].code); // Use setValue instead of textContent
-
+function createTestRunner(random) {
+  // Remove existing test button if it exists
   if (document.getElementById("testBtn")) {
     document.getElementById("testBtn").remove();
   }
 
+  // Create a new test button
   var runBtn = document.createElement("button");
   runBtn.textContent = "Run";
   runBtn.id = "testBtn";
 
+  // Append the test button to the btnDiv
   var btnDiv = document.getElementById("btnDiv");
   btnDiv.appendChild(runBtn);
 
+  // Add click event listener to the test button
   runBtn.addEventListener("click", function () {
     var test = data[random].test;
 
@@ -51,7 +49,61 @@ generate.addEventListener("click", function () {
       }
     };
   });
+}
+
+var generate = document.getElementById("generate");
+
+generate.addEventListener("click", function () {
+  document.getElementById("mocha").innerHTML = "";
+  var random = Math.floor(Math.random() * data.length);
+  editor.setValue(data[random].code); // Use setValue instead of textContent
+
+  // Call the createTestRunner function after generating a random code drill
+  createTestRunner(random);
 });
+
+
+function modalWork(){
+
+  for (var i = 0; i < data.length; i++) {
+    var ul = document.getElementById("modalList");
+
+    var li = document.createElement("li");
+    li.id = "modalItem";
+    li.textContent = data[i].title;
+    ul.appendChild(li);
+  }
+
+  ul.addEventListener("click", function (e) {
+    var target = e.target;
+    var index = Array.from(target.parentElement.children).indexOf(target);
+    editor.setValue(data[index].code);
+    createTestRunner(index);
+    modal.style.display = "none";
+    // Re-enable pointer events on other elements when modal is closed
+    document.querySelectorAll("body > *:not(#modal)").forEach(function(element) {
+      element.style.pointerEvents = "auto";
+    });
+  });
+}
+
+ modalWork();
+
+
+// var dropIcon = document.getElementById("dropIcon");
+
+// console.log("dropIcon:", dropIcon); // Log the dropIcon variable to check its value
+
+// dropIcon.addEventListener("click", function () {
+//   console.log("Icon clicked!"); // Log a message to check if the event listener is triggered
+//   modalWork();
+// });
+
+
+
+
+
+
 
 
 

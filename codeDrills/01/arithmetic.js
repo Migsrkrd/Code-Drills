@@ -1,4 +1,5 @@
 var arithmetic = {
+  title: "01-Arithmetic",
     test: `var expect = chai.expect;
 
     describe("add", function() {

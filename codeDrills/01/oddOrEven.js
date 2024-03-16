@@ -1,4 +1,5 @@
 var oddOrEven = {
+  title: "01-Odd or Even",
   test: `var expect = chai.expect;
 
   describe("oddOrEven", function() {

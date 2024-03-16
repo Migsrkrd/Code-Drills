@@ -1,77 +1,92 @@
-header{
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
 }
 
-#generate{
-    margin: 20px 0;
-    padding: 10px 20px;
-    font-size: 20px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    border: 1px solid #fff;
+#generate,
+#select {
+  margin: 20px;
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border: 1px solid #fff;
+  border-radius: 0px;
 }
 
-#generate:hover{
-    background-color: #fff;
-    color: #333;
-    border: 1px solid #333;
+#generate:hover,
+#select:hover {
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #333;
 }
 
-#generate:active{
-    transform: translateY(2px);
+#generate:active,
+#select:active {
+  transform: translateY(2px);
 }
 
-.mainArea{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.mainArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .CodeMirror {
-    padding: 20px 10px;
-    border-top: 1px solid #ccc;
-  }
-
-#testBtn{
-    margin: 20px 0;
-    padding: 10px 20px;
-    font-size: 20px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    border: 1px solid #fff;
+  padding: 20px 10px;
+  margin: 20px;
+  font-size: large;
+  min-height: 500px;
+  max-height: 900px;
+  white-space: inherit;
 }
 
-#testBtn:hover{
-    background-color: #fff;
-    color: #333;
-    border: 1px solid #333;
+#testBtn {
+  margin: 20px 0;
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border: 1px solid #fff;
 }
 
-#testBtn:active{
-    transform: translateY(2px);
+#testBtn:hover {
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #333;
 }
 
-#btnDiv{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+#testBtn:active {
+  transform: translateY(2px);
 }
 
-.testCase{
-    color: red;
-    font-weight: bold;
+#btnDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.correct{
-    color: green;
-    font-weight: bold;
+.dropdown-menu{
+    width: 120%;
+}
+
+#modalItem {
+  padding: 7px 0px 7px 0px;
+  margin: 0px;
+  border-bottom: 1px solid #333;
+  width: 100%;
+  padding: 5px;
+}
+
+#modalItem:hover {
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
 }
