@@ -1,5 +1,5 @@
-import data from "./codeDrills.js";
-import editor from "./cmStyle.js";
+import data from "./codeDrills/codeDrills.js";
+import editor from "./assets/cmStyle.js";
 
 function createTestRunner(random) {
   // Remove existing test button if it exists
@@ -75,6 +75,7 @@ function modalWork(){
   }
 
   ul.addEventListener("click", function (e) {
+    document.getElementById("mocha").innerHTML = "";
     var target = e.target;
     var index = Array.from(target.parentElement.children).indexOf(target);
     editor.setValue(data[index].code);
@@ -89,15 +90,6 @@ function modalWork(){
 
  modalWork();
 
-
-// var dropIcon = document.getElementById("dropIcon");
-
-// console.log("dropIcon:", dropIcon); // Log the dropIcon variable to check its value
-
-// dropIcon.addEventListener("click", function () {
-//   console.log("Icon clicked!"); // Log a message to check if the event listener is triggered
-//   modalWork();
-// });
 
 
 
